@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     
     @IBAction func userDetails(sender: UIButton) {
         let userId = self.txtUserId.text
-        var trimmedUserId = userId!.stringByTrimmingCharactersInSet(
+        let trimmedUserId = userId!.stringByTrimmingCharactersInSet(
             NSCharacterSet.whitespaceAndNewlineCharacterSet())
      
         

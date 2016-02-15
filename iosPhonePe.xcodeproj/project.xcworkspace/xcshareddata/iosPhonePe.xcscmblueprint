@@ -1,14 +1,17 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6A437EF727D9EE6983FF3B096EE51574F7A22CCE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6A437EF727D9EE6983FF3B096EE51574F7A22CCE" : 0,
     "D712610954CA9BFA7A6E793AC8CA9FD9B6557F56" : 0,
     "58AAB0051E2B4EEDF1845A552012E6D0EBAD9127" : 0,
     "67620B5EFA902936DF04070AF595B76AB0333747" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "66AB7AEB-B08D-40C8-9029-06CAC27B0593",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6A437EF727D9EE6983FF3B096EE51574F7A22CCE" : "iosPhonePe\/",
     "D712610954CA9BFA7A6E793AC8CA9FD9B6557F56" : "AlamofireObjectMapper\/",
     "58AAB0051E2B4EEDF1845A552012E6D0EBAD9127" : "ObjectMapper\/",
     "67620B5EFA902936DF04070AF595B76AB0333747" : "Alamofire\/"
@@ -26,6 +29,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:PhonePe\/mockAppIos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6A437EF727D9EE6983FF3B096EE51574F7A22CCE"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tristanhimmelman\/AlamofireObjectMapper",

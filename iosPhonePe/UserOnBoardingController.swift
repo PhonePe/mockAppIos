@@ -12,17 +12,26 @@ import UIKit
 class UserOnBoardingController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var pinField: UITextField!
-    let limitLength = 10
+    let limitLength = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pinField.delegate = self
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(pinfield: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         guard let text = pinField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length
         return newLength <= limitLength
     }
+    
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(pinField: UITextField) -> Bool {
+        // Hide the keyboard.
+        pinField.resignFirstResponder()
+        return true
+    }
+    
+  
     
 }
