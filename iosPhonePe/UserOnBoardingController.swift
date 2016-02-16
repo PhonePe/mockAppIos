@@ -16,6 +16,10 @@ class UserOnBoardingController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
         pinField.delegate = self
     }
     
@@ -31,6 +35,8 @@ class UserOnBoardingController: UIViewController, UITextFieldDelegate {
         pinField.resignFirstResponder()
         return true
     }
+    
+
     
   
     

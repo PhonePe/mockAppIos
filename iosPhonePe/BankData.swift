@@ -6,8 +6,6 @@
 //  Copyright © 2016 Prasad Pai. All rights reserved.
 //
 
-import Foundation
-
 
 class BankData {
     
@@ -18,10 +16,12 @@ class BankData {
     var isPartner: Bool?
     var isPremier: Bool?
     var priority: Int?
+    var isSelected : Bool?
+    var bankLogo: String?
     
 
     
-    init?(bankName:String, bankId:Int, ifscPrefix:String, isPartner:Bool, isPremier:Bool, priority:Int)
+    init?(bankName:String, bankId:Int, ifscPrefix:String, isPartner:Bool, isPremier:Bool, priority:Int, banklogo:String)
     {
         self.bankName = bankName
         self.bankId = bankId
@@ -29,6 +29,9 @@ class BankData {
         self.isPartner = isPartner
         self.isPremier = isPremier
         self.priority = priority
+        self.bankLogo = banklogo
+        
+        self.isSelected = false
     }
     
     

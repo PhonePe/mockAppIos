@@ -266,23 +266,43 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-Sz-0qk">
-                                <rect key="frame" x="136" y="497" width="46" height="30"/>
+                                <rect key="frame" x="208" y="497" width="46" height="30"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <segue destination="aqe-UV-EsQ" kind="show" id="33C-eG-b9r"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2bl-I7-DXW">
-                                <rect key="frame" x="16" y="115" width="288" height="178"/>
+                            <tableView clipsSubviews="YES" contentMode="top" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2bl-I7-DXW">
+                                <rect key="frame" x="20" y="120" width="288" height="178"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1pb-XH-24y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BankTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="BankTableViewCell" id="1pb-XH-24y" customClass="BankTableViewCell" customModule="iosPhonePe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1pb-XH-24y" id="caD-sA-CEd">
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wn9-aA-6lV">
+                                                    <rect key="frame" x="13" y="5" width="30" height="30"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-if-k9p" customClass="CheckBox" customModule="iosPhonePe" customModuleProvider="target">
+                                                    <rect key="frame" x="247" y="11" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNf-7c-HGM">
+                                                    <rect key="frame" x="58" y="4" width="172" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bankCheckBox" destination="Lg0-if-k9p" id="X49-AW-JTl"/>
+                                            <outlet property="bankLogo" destination="wn9-aA-6lV" id="ldr-aj-1E3"/>
+                                            <outlet property="bankName" destination="bNf-7c-HGM" id="0Nr-g7-6Y7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -290,12 +310,20 @@
                                     <outlet property="delegate" destination="cfE-eQ-Dor" id="b1j-WG-FfN"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAZ-VC-yDT">
+                                <rect key="frame" x="54" y="497" width="117" height="30"/>
+                                <state key="normal" title="Add Bank"/>
+                                <connections>
+                                    <action selector="addBankClick:" destination="cfE-eQ-Dor" eventType="touchUpInside" id="gVG-gF-ZGu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2cm-JJ-jmR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="addBank" destination="VAZ-VC-yDT" id="Q7L-Jq-a4j"/>
                         <outlet property="tableView" destination="2bl-I7-DXW" id="lmn-N6-dLp"/>
                         <outlet property="txtAccount" destination="VaL-eO-U7L" id="Kdm-8h-UgC"/>
                         <outlet property="txtIFSC" destination="eAm-0B-3uP" id="bqp-Nb-eYG"/>
@@ -317,24 +345,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dhR-Us-hNY">
-                                <rect key="frame" x="15" y="127" width="288" height="362"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iKU-Nb-8Ny">
-                                        <rect key="frame" x="0.0" y="114" width="288" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKU-Nb-8Ny" id="EXM-dN-kZJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="aqe-UV-EsQ" id="XjW-5a-fUS"/>
-                                    <outlet property="delegate" destination="aqe-UV-EsQ" id="yxI-U1-i65"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verify User Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFn-cP-RUf">
                                 <rect key="frame" x="64" y="41" width="190" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -354,6 +364,45 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="x2F-cp-pOz"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dhR-Us-hNY">
+                                <rect key="frame" x="12" y="127" width="288" height="362"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AccountTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountTableViewCell" id="iKU-Nb-8Ny" customClass="AccountTableViewCell" customModule="iosPhonePe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="114" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKU-Nb-8Ny" id="EXM-dN-kZJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T5D-5Z-WiD">
+                                                    <rect key="frame" x="19" y="7" width="30" height="30"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4G-5v-OKU">
+                                                    <rect key="frame" x="189" y="7" width="72" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COx-ar-mHb">
+                                                    <rect key="frame" x="62" y="11" width="112" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountNumber" destination="COx-ar-mHb" id="HHY-TI-6jU"/>
+                                            <outlet property="bankLogo" destination="T5D-5Z-WiD" id="asI-Qg-Osu"/>
+                                            <outlet property="lintUnlinkButton" destination="V4G-5v-OKU" id="eRo-M4-EZu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aqe-UV-EsQ" id="XjW-5a-fUS"/>
+                                    <outlet property="delegate" destination="aqe-UV-EsQ" id="yxI-U1-i65"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

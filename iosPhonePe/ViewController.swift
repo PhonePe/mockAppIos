@@ -65,7 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                 
                 for bankDto in bankDtoList {
                     
-                    self.bankslist.append(BankData(bankName:bankDto.bankName!, bankId:bankDto.bankId!, ifscPrefix: bankDto.ifscPrefix!,  isPartner:bankDto.isPartner!,isPremier: bankDto.isPremier!, priority:bankDto.priority!)!)
+                    self.bankslist.append(BankData(bankName:bankDto.bankName!, bankId:bankDto.bankId!, ifscPrefix: bankDto.ifscPrefix!,  isPartner:bankDto.isPartner!,isPremier: bankDto.isPremier!, priority:bankDto.priority!,banklogo:"")!)
                 }
                 
                 self.do_table_refresh()
@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         }
 
         
-        self.bankslist.append(BankData(bankName:"HDFC",bankId:12, ifscPrefix:"HDFC",  isPartner:false,isPremier:false, priority:1)!)
+        self.bankslist.append(BankData(bankName:"HDFC",bankId:12, ifscPrefix:"HDFC",  isPartner:false,isPremier:false, priority:1,banklogo:"")!)
    
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         

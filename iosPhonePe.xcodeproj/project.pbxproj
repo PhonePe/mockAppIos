@@ -29,6 +29,14 @@
 		E9D474401C72476400F9A2E4 /* UserOnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4743F1C72476400F9A2E4 /* UserOnBoardingController.swift */; };
 		E9D474421C72507600F9A2E4 /* BankOnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D474411C72507600F9A2E4 /* BankOnBoardingController.swift */; };
 		E9D474441C72537000F9A2E4 /* AccountManagementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D474431C72537000F9A2E4 /* AccountManagementController.swift */; };
+		E9D4744C1C7382C300F9A2E4 /* BankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4744B1C7382C300F9A2E4 /* BankTableViewCell.swift */; };
+		E9D474601C73846F00F9A2E4 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4745F1C73846F00F9A2E4 /* CheckBox.swift */; };
+		E9D474631C73850E00F9A2E4 /* ic_checkbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = E9D474611C73850E00F9A2E4 /* ic_checkbox_checked.png */; };
+		E9D474641C73850E00F9A2E4 /* ic_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = E9D474621C73850E00F9A2E4 /* ic_checkbox.png */; };
+		E9D474661C73931100F9A2E4 /* AccountDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D474651C73931100F9A2E4 /* AccountDto.swift */; };
+		E9D474681C73931E00F9A2E4 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D474671C73931E00F9A2E4 /* AccountData.swift */; };
+		E9D4746C1C73A38500F9A2E4 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4746B1C73A38500F9A2E4 /* AccountTableViewCell.swift */; };
+		E9D4746E1C73B0FF00F9A2E4 /* CreateAccountDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4746D1C73B0FF00F9A2E4 /* CreateAccountDto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +266,14 @@
 		E9D4743F1C72476400F9A2E4 /* UserOnBoardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOnBoardingController.swift; sourceTree = "<group>"; };
 		E9D474411C72507600F9A2E4 /* BankOnBoardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankOnBoardingController.swift; sourceTree = "<group>"; };
 		E9D474431C72537000F9A2E4 /* AccountManagementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManagementController.swift; sourceTree = "<group>"; };
+		E9D4744B1C7382C300F9A2E4 /* BankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankTableViewCell.swift; sourceTree = "<group>"; };
+		E9D4745F1C73846F00F9A2E4 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		E9D474611C73850E00F9A2E4 /* ic_checkbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_checkbox_checked.png; sourceTree = "<group>"; };
+		E9D474621C73850E00F9A2E4 /* ic_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_checkbox.png; sourceTree = "<group>"; };
+		E9D474651C73931100F9A2E4 /* AccountDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDto.swift; sourceTree = "<group>"; };
+		E9D474671C73931E00F9A2E4 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		E9D4746B1C73A38500F9A2E4 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		E9D4746D1C73B0FF00F9A2E4 /* CreateAccountDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +344,8 @@
 		E9AA3A9F1C6FAF6E0073C01A /* iosPhonePe */ = {
 			isa = PBXGroup;
 			children = (
+				E9D474611C73850E00F9A2E4 /* ic_checkbox_checked.png */,
+				E9D474621C73850E00F9A2E4 /* ic_checkbox.png */,
 				E9AA3AA01C6FAF6E0073C01A /* AppDelegate.swift */,
 				E9D474391C722B3400F9A2E4 /* ic_splash_symbol.png */,
 				E9AA3AA21C6FAF6E0073C01A /* ViewController.swift */,
@@ -343,6 +361,12 @@
 				E9D4743F1C72476400F9A2E4 /* UserOnBoardingController.swift */,
 				E9D474411C72507600F9A2E4 /* BankOnBoardingController.swift */,
 				E9D474431C72537000F9A2E4 /* AccountManagementController.swift */,
+				E9D4744B1C7382C300F9A2E4 /* BankTableViewCell.swift */,
+				E9D4745F1C73846F00F9A2E4 /* CheckBox.swift */,
+				E9D474651C73931100F9A2E4 /* AccountDto.swift */,
+				E9D474671C73931E00F9A2E4 /* AccountData.swift */,
+				E9D4746B1C73A38500F9A2E4 /* AccountTableViewCell.swift */,
+				E9D4746D1C73B0FF00F9A2E4 /* CreateAccountDto.swift */,
 			);
 			path = iosPhonePe;
 			sourceTree = "<group>";
@@ -666,10 +690,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D474641C73850E00F9A2E4 /* ic_checkbox.png in Resources */,
 				E9AA3AAB1C6FAF6E0073C01A /* LaunchScreen.storyboard in Resources */,
 				E9AA3AA81C6FAF6E0073C01A /* Assets.xcassets in Resources */,
 				E9D4743A1C722B3400F9A2E4 /* ic_splash_symbol.png in Resources */,
 				E9AA3AA61C6FAF6E0073C01A /* Main.storyboard in Resources */,
+				E9D474631C73850E00F9A2E4 /* ic_checkbox_checked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,12 +721,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D4743C1C722CA600F9A2E4 /* LanguageController.swift in Sources */,
+				E9D474681C73931E00F9A2E4 /* AccountData.swift in Sources */,
 				E9AA3AA31C6FAF6E0073C01A /* ViewController.swift in Sources */,
+				E9D4746C1C73A38500F9A2E4 /* AccountTableViewCell.swift in Sources */,
 				E9AA3AA11C6FAF6E0073C01A /* AppDelegate.swift in Sources */,
 				E932D2451C70DAA9007C74EF /* UserDto.swift in Sources */,
+				E9D4744C1C7382C300F9A2E4 /* BankTableViewCell.swift in Sources */,
+				E9D474661C73931100F9A2E4 /* AccountDto.swift in Sources */,
 				E9AE3AF31C70615C0043E524 /* Account.swift in Sources */,
+				E9D4746E1C73B0FF00F9A2E4 /* CreateAccountDto.swift in Sources */,
 				E9AE3B161C70AE270043E524 /* BankDto.swift in Sources */,
 				E9D474441C72537000F9A2E4 /* AccountManagementController.swift in Sources */,
+				E9D474601C73846F00F9A2E4 /* CheckBox.swift in Sources */,
 				E932D2471C70EBFE007C74EF /* BankData.swift in Sources */,
 				E9D474421C72507600F9A2E4 /* BankOnBoardingController.swift in Sources */,
 				E9D474401C72476400F9A2E4 /* UserOnBoardingController.swift in Sources */,

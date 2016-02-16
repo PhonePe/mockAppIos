@@ -6,10 +6,7 @@
 //  Copyright © 2016 Prasad Pai. All rights reserved.
 //
 
-import Foundation
 import ObjectMapper
-
-
 
 class BankDto: Mappable {
     

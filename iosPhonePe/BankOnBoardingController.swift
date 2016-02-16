@@ -18,29 +18,45 @@ class BankOnBoardingController: UIViewController, UITextFieldDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var txtAccount: UITextField!
     @IBOutlet weak var txtIFSC: UITextField!
+    @IBOutlet weak var addBank: UIButton!
     
+    let userId = 4
     let limitAccountLength = 16
-    
-    
     var bankslist = [BankData]()
-    let cellIdentifier = "cell"
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.bankslist.count;
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return bankslist.count
+    }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
         
-        cell.textLabel?.text = self.bankslist[indexPath.row].bankName
+       let cellIdentifier = "BankTableViewCell"
+       let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BankTableViewCell
+        
+        // Fetches the appropriate meal for the data source layout.
+        let bank = bankslist[indexPath.row]
+        
+        cell.bankName.text = bank.bankName
+        cell.bankCheckBox.isChecked = bank.isSelected!
+       
+        let url  = NSURL(string: bank.bankLogo!)
+        let data = NSData(contentsOfURL: url!)
+        
+        if data !== nil
+        {
+            cell.bankLogo.image = UIImage(data: data!)
+        }
+        
         
         return cell
     }
     
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Banks"
-    }
+
     
     
     override func viewDidLoad() {
@@ -49,6 +65,8 @@ class BankOnBoardingController: UIViewController, UITextFieldDelegate, UITableVi
         txtAccount.delegate = self
         txtIFSC.delegate = self;
         
+        self.tableView.tableHeaderView = nil
+     
         
         // MARK: UITableViewDelegate
         Alamofire.request(.GET, "http://stage.phonepe.com/banks?partnerOnly=true").responseArray("banks") { (response: Response<[BankDto], NSError>) in
@@ -60,17 +78,13 @@ class BankOnBoardingController: UIViewController, UITextFieldDelegate, UITableVi
                 
                 for bankDto in bankDtoList {
                     
-                    self.bankslist.append(BankData(bankName:bankDto.bankName!, bankId:bankDto.bankId!, ifscPrefix: bankDto.ifscPrefix!,  isPartner:bankDto.isPartner!,isPremier: bankDto.isPremier!, priority:bankDto.priority!)!)
+                    let banklogoString = "http://stage.phonepe.com/images/banks/" + String(bankDto.bankId!) + ".png"
+                    self.bankslist.append(BankData(bankName:bankDto.bankName!, bankId:bankDto.bankId!, ifscPrefix: bankDto.ifscPrefix!,  isPartner:bankDto.isPartner!,isPremier: bankDto.isPremier!, priority:bankDto.priority!, banklogo:banklogoString)!)
                 }
                 
                 self.do_table_refresh()
             }
         }
-        
-        
-        self.bankslist.append(BankData(bankName:"HDFC",bankId:12, ifscPrefix:"HDFC",  isPartner:false,isPremier:false, priority:1)!)
-        
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         
     }
@@ -104,5 +118,22 @@ class BankOnBoardingController: UIViewController, UITextFieldDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
 
+//    @IBAction func addBankClick(sender: UIButton) {
+//        
+//    let createAccountDto = CreateAccountDto(accountName:String(userId), ifsc:self.txtIFSC.text!, accountNo:Int(self.txtAccount.text!)!, nickname:"random")!
+//    
+//        let JSONString = Mapper().toJSON(createAccountDto)
+//        
+//        Alamofire.request(.POST, "http://stage.phonepe.com//user/" + String(userId) + "/account", parameters: JSONString, encoding: .JSON)
+//     
+//      
+//    }
+    
+     
+        
+
+
+        
+    
 
 }
